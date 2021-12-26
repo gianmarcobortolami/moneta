@@ -1,15 +1,15 @@
 /**
  * Deposit where the transaction flow in/out. It describes a money deposit.
  */
-class Deposit {
-  id: string;
+export class Deposit {
+  id: number;
   name: string;
   iconPath: string;
 
-  constructor() {
-    this.id = "";
-    this.name = "";
-    this.iconPath = "";
+  constructor(name?: string, iconPath?: string) {
+    this.id = -1;
+    this.name = name || "";
+    this.iconPath = iconPath || "";
   }
 
   /**
@@ -33,6 +33,6 @@ class Deposit {
    * @returns True if the deposit is initialized with no-default value, False otherwise.
    */
   isInit(): boolean {
-    return this.id !== "" && this.name !== "" && this.iconPath !== "";
+    return this.id !== -1 && this.name !== "" && this.iconPath !== "";
   }
 }

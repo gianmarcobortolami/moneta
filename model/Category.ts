@@ -1,15 +1,15 @@
 /**
  * Category to which each transaction belongs to. It provides a brief description of the transaction causal.
  */
-class Category {
-  id: string;
+export class Category {
+  id: number;
   name: string;
   iconPath: string;
 
-  constructor() {
-    this.id = "";
-    this.name = "";
-    this.iconPath = "";
+  constructor(name?: string, iconPath?: string) {
+    this.id = -1;
+    this.name = name || "";
+    this.iconPath = iconPath || "";
   }
 
   /**
@@ -33,6 +33,6 @@ class Category {
    * @returns True if the deposit is initialized with no-default value, False otherwise.
    */
   isInit(): boolean {
-    return this.id !== "" && this.name !== "" && this.iconPath !== "";
+    return this.id !== -1 && this.name !== "" && this.iconPath !== "";
   }
 }
